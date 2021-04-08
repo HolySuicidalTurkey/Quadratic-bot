@@ -16,14 +16,16 @@ var valprompt2 = {
     name: 'valtwo',
     message: "What is the value of the second coefficient?",
 }
+var gcd = function(a, b) {
+ if (b == 0) {
+  return a;
+ }
+ return gcd(b, a % b);
+};
 
 inq.prompt(wutyouwantprompt).then((answers) => {
-	if(answers.coamt == true){
-        var gcd = function(a, b) {
-            if (b == 0) {
-            return a;
-         }
-    return gcd(b, a % b);
-    };
-console.log(gcd(1263262,553443));
+ if(answers.coamt == true){
+  var greatest = (gcd(valone,valtwo));
+  console.log(greatest)
+ }
 //11
