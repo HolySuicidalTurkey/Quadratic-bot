@@ -1,6 +1,6 @@
 const inq = require('inquirer');
 
-var wutyouwantprompt = {
+var howmany = {
       type: 'validate',
       name: 'coamt',
       message: 'Does this problem have 3 coefficients?',
@@ -16,6 +16,12 @@ var valprompt2 = {
     name: 'valtwo',
     message: "What is the value of the second coefficient?",
 }
+var valprompt3 = {
+    type: 'input',
+    name: 'valthree',
+    message: "What is the value of the third coefficient?",
+}
+
 var gcd = function(a, b) {
  if (b == 0) {
   return a;
@@ -23,9 +29,32 @@ var gcd = function(a, b) {
  return gcd(b, a % b);
 };
 
-inq.prompt(wutyouwantprompt).then((answers) => {
+inq.prompt(howmany).then((answers) => {
  if(answers.coamt == true){
-  var greatest = (gcd(valone,valtwo));
-  console.log(greatest)
+       inq.prompt(valprompt1).then((answers) => {
+	      var value1 = answers.valone;
+       }
+       inq.prompt(valprompt2).then((answers) => {
+	      var value2 = answers.valtwo;
+       }
+       inq.prompt(valprompt3).then((answers) => {
+	      var value3 = answers.valthree;
+       }
+  var greatest = (gcd(value1,value2,value3));
+  console.log(greatest);
+       
  }
-//11
+      
+      
+      
+ if(answers.coamt == false){
+       inq.prompt(valprompt1).then((answers) => {
+	      var value1 = answers.valone;
+       }
+       inq.prompt(valprompt2).then((answers) => {
+	      var value2 = answers.valtwo;
+       }
+  var greatest = (gcd(value1,value2));
+  console.log(greatest);
+       
+ }
