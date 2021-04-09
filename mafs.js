@@ -33,13 +33,13 @@ inq.prompt(howmany).then((answers) => {
  if(answers.coamt == true){
        inq.prompt(valprompt1).then((answers) => {
 	      var value1 = answers.valone;
-       }
+       })
        inq.prompt(valprompt2).then((answers) => {
 	      var value2 = answers.valtwo;
-       }
+       })
        inq.prompt(valprompt3).then((answers) => {
 	      var value3 = answers.valthree;
-       }
+       })
   var greatest = (gcd(value1,value2,value3));
   console.log(greatest);
        
@@ -50,11 +50,12 @@ inq.prompt(howmany).then((answers) => {
  if(answers.coamt == false){
        inq.prompt(valprompt1).then((answers) => {
 	      var value1 = answers.valone;
-       }
+       })
        inq.prompt(valprompt2).then((answers) => {
 	      var value2 = answers.valtwo;
-       }
+       })
   var greatest = (gcd(value1,value2));
   console.log(greatest);
        
  }
+})
